@@ -34,6 +34,22 @@ class TravelCollectionViewController: UICollectionViewController {
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView,
+                                 viewForSupplementaryElementOfKind kind: String,
+                                 at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionElementKindSectionHeader:
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                             withReuseIdentifier: "TravelHeaderReusableView",
+                                                                             for: indexPath) as! TravelHeaderReusableView
+            headerView.CountryImage.image = UIImage(named: "travel.jpg")
+            return headerView
+        default:
+            //4
+            assert(false, "Unexpected element kind")
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {

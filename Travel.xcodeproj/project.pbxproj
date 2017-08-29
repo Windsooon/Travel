@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18BB11681F55033C003D92FD /* TravelHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB11671F55033C003D92FD /* TravelHeaderReusableView.swift */; };
 		DC1CE0A91F44643A00CB99FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1CE0A81F44643A00CB99FA /* AppDelegate.swift */; };
 		DC1CE0AB1F44643B00CB99FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1CE0AA1F44643B00CB99FA /* ViewController.swift */; };
 		DC1CE0AE1F44643B00CB99FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC1CE0AC1F44643B00CB99FA /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18BB11671F55033C003D92FD /* TravelHeaderReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelHeaderReusableView.swift; sourceTree = "<group>"; };
 		DC1CE0A51F44643A00CB99FA /* Travel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Travel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC1CE0A81F44643A00CB99FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC1CE0AA1F44643B00CB99FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				DC1CE0A81F44643A00CB99FA /* AppDelegate.swift */,
 				DC1CE0AA1F44643B00CB99FA /* ViewController.swift */,
 				DC1CE0AC1F44643B00CB99FA /* Main.storyboard */,
+				18BB11671F55033C003D92FD /* TravelHeaderReusableView.swift */,
 				DC1CE0D61F4464C900CB99FA /* TravelCollectionViewController.swift */,
 				DC1CE0AF1F44643B00CB99FA /* Assets.xcassets */,
 				DC1CE0B11F44643B00CB99FA /* LaunchScreen.storyboard */,
@@ -267,6 +270,7 @@
 			files = (
 				DC1CE0AB1F44643B00CB99FA /* ViewController.swift in Sources */,
 				DC1CE0A91F44643A00CB99FA /* AppDelegate.swift in Sources */,
+				18BB11681F55033C003D92FD /* TravelHeaderReusableView.swift in Sources */,
 				DC1CE0D71F4464C900CB99FA /* TravelCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,6 +524,7 @@
 				DC1CE0CF1F44643B00CB99FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DC1CE0D01F44643B00CB99FA /* Build configuration list for PBXNativeTarget "TravelTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +533,7 @@
 				DC1CE0D21F44643B00CB99FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DC1CE0D31F44643B00CB99FA /* Build configuration list for PBXNativeTarget "TravelUITests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +542,7 @@
 				DC1CE0D51F44643B00CB99FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

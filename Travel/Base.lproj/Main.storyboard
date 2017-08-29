@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UI4-P1-HFf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UI4-P1-HFf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,13 +20,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eVo-Qk-dAy">
                             <size key="itemSize" width="181" height="113"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="headerReferenceSize" width="50" height="180"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CountryCell" id="HV2-0J-6bG">
-                                <rect key="frame" x="0.0" y="0.0" width="181" height="113"/>
+                                <rect key="frame" x="0.0" y="180" width="181" height="113"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="181" height="113"/>
@@ -35,6 +36,24 @@
                                 <size key="customSize" width="181" height="113"/>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TravelHeaderReusableView" id="AtG-0y-vYm" userLabel="Country Reusable View" customClass="TravelHeaderReusableView" customModule="Travel" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="travel" translatesAutoresizingMaskIntoConstraints="NO" id="Zjf-Z1-Aq4" userLabel="Country Image View">
+                                    <rect key="frame" x="0.0" y="8" width="375" height="172"/>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="Zjf-Z1-Aq4" firstAttribute="top" secondItem="AtG-0y-vYm" secondAttribute="topMargin" id="4cG-Ti-qgx"/>
+                                <constraint firstAttribute="bottom" secondItem="Zjf-Z1-Aq4" secondAttribute="bottom" id="51X-4V-vFx"/>
+                                <constraint firstAttribute="trailing" secondItem="Zjf-Z1-Aq4" secondAttribute="trailing" id="Qg6-Vp-qTa"/>
+                                <constraint firstItem="Zjf-Z1-Aq4" firstAttribute="leading" secondItem="AtG-0y-vYm" secondAttribute="leading" id="pip-ou-97H"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="CountryImage" destination="Zjf-Z1-Aq4" id="TMX-th-Zw4"/>
+                            </connections>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="lnz-kk-pQw" id="rd4-AK-4jI"/>
                             <outlet property="delegate" destination="lnz-kk-pQw" id="dEn-rC-wrz"/>
@@ -65,4 +84,7 @@
             <point key="canvasLocation" x="-74.400000000000006" y="137.18140929535232"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="travel" width="960" height="528"/>
+    </resources>
 </document>
