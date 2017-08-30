@@ -25,15 +25,37 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CountryCell" id="HV2-0J-6bG">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CountryCell" id="HV2-0J-6bG" customClass="CountryCell" customModule="Travel" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="180" width="181" height="113"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="181" height="113"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NY7-RE-wi8">
+                                            <rect key="frame" x="12" y="9" width="157" height="73"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LeN-Ea-2f6">
+                                            <rect key="frame" x="69" y="86" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </view>
-                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottomMargin" secondItem="NY7-RE-wi8" secondAttribute="bottom" constant="23" id="6AM-ma-Lqr"/>
+                                    <constraint firstItem="NY7-RE-wi8" firstAttribute="centerX" secondItem="HV2-0J-6bG" secondAttribute="centerX" id="TnR-m7-tb1"/>
+                                    <constraint firstItem="LeN-Ea-2f6" firstAttribute="top" secondItem="NY7-RE-wi8" secondAttribute="bottom" constant="4" id="igO-Lq-dpx"/>
+                                    <constraint firstItem="LeN-Ea-2f6" firstAttribute="centerX" secondItem="HV2-0J-6bG" secondAttribute="centerX" id="k0r-n7-75B"/>
+                                    <constraint firstItem="NY7-RE-wi8" firstAttribute="top" secondItem="HV2-0J-6bG" secondAttribute="topMargin" constant="1" id="rk6-rg-TC0"/>
+                                </constraints>
                                 <size key="customSize" width="181" height="113"/>
+                                <connections>
+                                    <outlet property="CountryFlag" destination="NY7-RE-wi8" id="sIs-y1-QyC"/>
+                                    <outlet property="CountryName" destination="LeN-Ea-2f6" id="cdm-tD-bE7"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TravelHeaderReusableView" id="AtG-0y-vYm" userLabel="Country Reusable View" customClass="TravelHeaderReusableView" customModule="Travel" customModuleProvider="target">

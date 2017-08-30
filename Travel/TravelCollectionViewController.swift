@@ -8,12 +8,14 @@
 
 import UIKit
 
+
 private let reuseIdentifier = "CountryCell"
 
 class TravelCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let base_url = "http://127.0.0.1:8000/"
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,8 +31,9 @@ class TravelCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CountryCell", for: indexPath)
-    
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CountryCell", for: indexPath) as! CountryCell
+        
+        print(indexPath)
         return cell
     }
     
@@ -40,12 +43,10 @@ class TravelCollectionViewController: UICollectionViewController {
         switch kind {
         case UICollectionElementKindSectionHeader:
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                             withReuseIdentifier: "TravelHeaderReusableView",
-                                                                             for: indexPath) as! TravelHeaderReusableView
+                withReuseIdentifier: "TravelHeaderReusableView", for: indexPath) as! TravelHeaderReusableView
             headerView.CountryImage.image = UIImage(named: "travel.jpg")
             return headerView
         default:
-            //4
             assert(false, "Unexpected element kind")
         }
     }
