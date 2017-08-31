@@ -7,15 +7,23 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 
 private let reuseIdentifier = "CountryCell"
 
 class TravelCollectionViewController: UICollectionViewController {
     
+    var countryList: [JSON]?
     override func viewDidLoad() {
         super.viewDidLoad()
-        let base_url = "http://127.0.0.1:8000/"
+        
+        getCountry() {responseObject, error in
+            if let country = responseObject {
+                self.countryList = country
+                self.collectionView?.reloadData()
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,8 +40,9 @@ class TravelCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CountryCell", for: indexPath) as! CountryCell
-        
-        print(indexPath)
+        if let data = self.countryList {
+            cell.CountryName.text = data.map({$0["name"].stringValue})[indexPath.row]
+        }
         return cell
     }
     

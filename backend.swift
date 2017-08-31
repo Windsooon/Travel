@@ -7,19 +7,22 @@
 //
 
 import Alamofire
+import SwiftyJSON
 
-func get_country(type: String) -> String {
-    
-    Alamofire.request("http://api.androidhive.info/contacts/").responseJSON { (responseData) -> Void in
-        if((responseData.result.value) != nil) {
-            let swiftyJsonVar = JSON(responseData.result.value!)
-            
-            if let resData = swiftyJsonVar["contacts"].arrayObject {
-                self.arrRes = resData as! [[String:AnyObject]]
-            }
-            if self.arrRes.count > 0 {
-                self.tblJSON.reloadData()
-            }
+let base_url = "http://127.0.0.1:8000/api/"
+
+func getCountry(completionHandler: @escaping ([JSON]?, Error?) -> ()) {
+    getBackend(base_url, "country", completionHandler: completionHandler)
+}
+
+func getBackend(_ url: String, _ section: String, completionHandler: @escaping ([JSON]?, Error?) -> ()) {
+    Alamofire.request(base_url + section + "/").validate().responseJSON { response in
+        switch response.result {
+        case .success(let value):
+            let countryList = JSON(value)
+            completionHandler(countryList["results"].array, nil)
+        case .failure(let error):
+            completionHandler(nil, error)
         }
     }
 }
