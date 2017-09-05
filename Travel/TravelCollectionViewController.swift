@@ -35,13 +35,12 @@ class TravelCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CountryCell", for: indexPath) as! CountryCell
         if let data = self.countryList {
-            print(data.map({$0["thumbnail"].stringValue})[indexPath.row])
             cell.CountryName.text = data.map({$0["name"].stringValue})[indexPath.row]
             cell.CountryFlag.image = UIImage(named: data.map({$0["thumbnail"].stringValue})[indexPath.row])
         }
@@ -61,6 +60,11 @@ class TravelCollectionViewController: UICollectionViewController {
             assert(false, "Unexpected element kind")
         }
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
+
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
