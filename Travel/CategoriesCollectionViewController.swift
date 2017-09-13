@@ -1,5 +1,5 @@
 //
-//  TravelCollectionViewController.swift
+//  AppCategoriesCollectionViewController
 //  Travel
 //
 //  Created by Windson on 2017/8/16.
@@ -10,39 +10,39 @@ import UIKit
 import SwiftyJSON
 
 
-private let reuseIdentifier = "CountryCell"
+private let reuseIdentifier = "CategoryCell"
 
-class TravelCollectionViewController: UICollectionViewController {
+class CategoriesCollectionViewController: UICollectionViewController {
     
-    var countryList: [JSON]?
+    var categoryList: [JSON]?
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getCountry() {responseObject, error in
-            if let country = responseObject {
-                self.countryList = country
+        getCategory() {responseObject, error in
+            if let category = responseObject {
+                self.categoryList = category
                 self.collectionView?.reloadData()
             }
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 1
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CountryCell", for: indexPath) as! CountryCell
-        if let data = self.countryList {
-            cell.CountryName.text = data.map({$0["name"].stringValue})[indexPath.row]
-            cell.CountryFlag.image = UIImage(named: data.map({$0["thumbnail"].stringValue})[indexPath.row])
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
+        if let data = self.categoryList {
+            cell.CategoryName.text = data.map({$0["name"].stringValue})[indexPath.row]
+            cell.CategoryThum.image = UIImage(named: data.map({$0["thumbnail"].stringValue})[indexPath.row])
         }
         return cell
     }
@@ -53,19 +53,13 @@ class TravelCollectionViewController: UICollectionViewController {
         switch kind {
         case UICollectionElementKindSectionHeader:
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                withReuseIdentifier: "TravelHeaderReusableView", for: indexPath) as! TravelHeaderReusableView
-            headerView.CountryImage.image = UIImage(named: "travel.jpg")
+                                                                             withReuseIdentifier: "CategoryHeaderReusableView", for: indexPath) as! CategoryHeaderReusableView
+            headerView.CategoryHeader.image = UIImage(named: "travel.jpg")
             return headerView
         default:
             assert(false, "Unexpected element kind")
         }
     }
-    
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        self.performSegue(withIdentifier: "AppCategories", sender: self)
-    }
-
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,

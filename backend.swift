@@ -15,6 +15,10 @@ func getCountry(completionHandler: @escaping ([JSON]?, Error?) -> ()) {
     getBackend(base_url, "country", completionHandler: completionHandler)
 }
 
+func getCategory(completionHandler: @escaping ([JSON]?, Error?) -> ()) {
+    getBackend(base_url, "category", completionHandler: completionHandler)
+}
+
 func getBackend(_ url: String, _ section: String, completionHandler: @escaping ([JSON]?, Error?) -> ()) {
     Alamofire.request(base_url + section + "/").validate().responseJSON { response in
         switch response.result {

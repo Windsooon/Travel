@@ -10,5 +10,4 @@ import UIKit
 
 class TravelHeaderReusableView: UICollectionReusableView {
     @IBOutlet weak var CountryImage: UIImageView!
-
 }

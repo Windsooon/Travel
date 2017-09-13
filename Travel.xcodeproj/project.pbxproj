@@ -10,6 +10,9 @@
 		180556B71F566B2A0063017C /* backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180556B61F566B2A0063017C /* backend.swift */; };
 		18BB11681F55033C003D92FD /* TravelHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB11671F55033C003D92FD /* TravelHeaderReusableView.swift */; };
 		18BB116A1F565353003D92FD /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB11691F565353003D92FD /* CountryCell.swift */; };
+		18BB8E881F68D45700B0094A /* CategoriesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB8E871F68D45700B0094A /* CategoriesCollectionViewController.swift */; };
+		18BB8E8A1F68DA4200B0094A /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB8E891F68DA4200B0094A /* CategoryCell.swift */; };
+		18BB8E8C1F68DB2C00B0094A /* CategoryHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB8E8B1F68DB2C00B0094A /* CategoryHeaderReusableView.swift */; };
 		2ADBC7FC61FE82F443FE7A78 /* Pods_TravelUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B151D792827019676FED20DE /* Pods_TravelUITests.framework */; };
 		3D4C31A2169F347F3BD4EA71 /* Pods_Travel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C069B5CA0CF14AB451363F3C /* Pods_Travel.framework */; };
 		CC1294ACEFC4D00E1D0124AA /* Pods_TravelTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E38F37CC5CFAFE16B7A139 /* Pods_TravelTests.framework */; };
@@ -44,6 +47,9 @@
 		180556B61F566B2A0063017C /* backend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = backend.swift; path = ../backend.swift; sourceTree = "<group>"; };
 		18BB11671F55033C003D92FD /* TravelHeaderReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelHeaderReusableView.swift; sourceTree = "<group>"; };
 		18BB11691F565353003D92FD /* CountryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
+		18BB8E871F68D45700B0094A /* CategoriesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewController.swift; sourceTree = "<group>"; };
+		18BB8E891F68DA4200B0094A /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		18BB8E8B1F68DB2C00B0094A /* CategoryHeaderReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryHeaderReusableView.swift; sourceTree = "<group>"; };
 		372EA0EDB9B81CA2E955BF57 /* Pods-TravelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TravelTests/Pods-TravelTests.release.xcconfig"; sourceTree = "<group>"; };
 		546C6FA53DA3BD56FF25DEE5 /* Pods-Travel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel.release.xcconfig"; path = "Pods/Target Support Files/Pods-Travel/Pods-Travel.release.xcconfig"; sourceTree = "<group>"; };
 		5724A2DFCE6C41FEDCBE7094 /* Pods-Travel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Travel/Pods-Travel.debug.xcconfig"; sourceTree = "<group>"; };
@@ -150,6 +156,9 @@
 				DC1CE0AC1F44643B00CB99FA /* Main.storyboard */,
 				18BB11691F565353003D92FD /* CountryCell.swift */,
 				180556B61F566B2A0063017C /* backend.swift */,
+				18BB8E871F68D45700B0094A /* CategoriesCollectionViewController.swift */,
+				18BB8E891F68DA4200B0094A /* CategoryCell.swift */,
+				18BB8E8B1F68DB2C00B0094A /* CategoryHeaderReusableView.swift */,
 				18BB11671F55033C003D92FD /* TravelHeaderReusableView.swift */,
 				DC1CE0D61F4464C900CB99FA /* TravelCollectionViewController.swift */,
 				DC1CE0AF1F44643B00CB99FA /* Assets.xcassets */,
@@ -477,12 +486,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18BB8E8C1F68DB2C00B0094A /* CategoryHeaderReusableView.swift in Sources */,
 				DC1CE0AB1F44643B00CB99FA /* ViewController.swift in Sources */,
 				DC1CE0A91F44643A00CB99FA /* AppDelegate.swift in Sources */,
 				18BB116A1F565353003D92FD /* CountryCell.swift in Sources */,
+				18BB8E8A1F68DA4200B0094A /* CategoryCell.swift in Sources */,
 				18BB11681F55033C003D92FD /* TravelHeaderReusableView.swift in Sources */,
 				180556B71F566B2A0063017C /* backend.swift in Sources */,
 				DC1CE0D71F4464C900CB99FA /* TravelCollectionViewController.swift in Sources */,
+				18BB8E881F68D45700B0094A /* CategoriesCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
